@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:banklite-${random.uuid};DB_CLOSE_DELAY=-1;LOCK_TIMEOUT=10000
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  cache:
+    type: none
+
+management:
+  health:
+    redis:
+      enabled: false
+
+banklite:
+  transfer:
+    retry-backoff-ms: 2
